@@ -2,6 +2,7 @@
 
 taskModule = angular.module('taskInputModule', ['dateTimeService']);
 
+/* <task gc-task-model="task.pos" duration="task.duration"></task> */
 taskModule.directive('task', ['$browser', '$sniffer', '$document', 'dateTime', function($browser, $sniffer, $document, dateTime) {
   return {
     restrict: 'E',
@@ -96,7 +97,7 @@ taskModule.directive('task', ['$browser', '$sniffer', '$document', 'dateTime', f
           var days = value / 21;
           
           // Get date from start day
-          var date = dateTime.GetDateFromStartDate(days);
+          var date = dateTime.getDateFromStartDate(days);
           return dateTime.printDate(date);
         });
         
@@ -104,13 +105,11 @@ taskModule.directive('task', ['$browser', '$sniffer', '$document', 'dateTime', f
         ctrl.$formattersStartTime.push(function(value) {
           var date = new Date(value);
           
-          var days = dateTime.GetDaysFromStartDate(date);          
+          var days = dateTime.getDaysFromStartDate(date);          
           return days * 21;
         });
         
-        
-        
-               
+    
       }
     }
   };

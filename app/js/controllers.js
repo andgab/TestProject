@@ -59,7 +59,9 @@ ganttApp.directive('ngSparkline', function() {
 ganttApp.controller('TaskListCtrl', ['$scope', '$http', 'dateTime', function($scope, $http, dateTime) {
 	$scope.pos = 7;
 	
-	dateTime.SetStartDay("2014-03-01");
+	dateTime.setMondayAsStartOfWeek(false);
+	dateTime.setStartDay("2014-03-01");
+	dateTime.setEndDate("2014-05-04");
 	
 	$scope.test = {
 	    pos: 6,
