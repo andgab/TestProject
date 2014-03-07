@@ -1,0 +1,67 @@
+<div class="panel-defult" ng-controller="TaskListCtrl">
+
+<div class="splitter-layout" style="width: 212px; height: 436px;">
+  <table class="f">
+    <tbody>
+    <tr ng-repeat="task in tasks" class="yO">
+      <td class="xY">
+        <div>{{task.name}}</div>
+      </td>
+      <td class="xY">
+        <div>{{task.name}}</div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="splitter-layout-splitter splitter" style="height: 436px;"></div>
+<div class="splitter-layout" style="width: 400px; height: 436px;">
+  <table class="f">
+    <tbody>
+    <tr ng-repeat="task in tasks" class="yO">
+      <td class="xY">
+        <div class="table-cell-inner" style="text-align:left;">
+          <div x-lvl-draggable class="gantt-event-wrap" style="left:{{task.pos}}px">
+            <div class="gantt-task-bar" style="width:240px;">
+              <div class="gantt-resizable-handle gantt-resizable-handle-start"></div>
+              <div class="gantt-resizable-handle gantt-resizable-handle-end"></div>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+ganttApp.directive('myDraggable', function($document) {
+  return function(scope, element, attr) {
+    var startX = 0, x = 0;
+    element.on('mousedown', function(event) {
+      // Prevent default dragging of selected content
+      event.preventDefault();
+      startX = event.screenX - x;
+      $document.on('mousemove', mousemove);
+      $document.on('mouseup', mouseup);
+    });
+   
+    function mousemove(event) {
+      x = event.screenX - startX;
+      if(x < 0)
+      {
+        x = 0;
+      }
+      element.css({
+        left: x + 'px'
+      });
+    }
+   
+    function mouseup() {
+      $document.unbind('mousemove', mousemove);
+      $document.unbind('mouseup', mouseup);
+      }
+    };
+});

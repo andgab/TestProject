@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" ng-app="ganttApp">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  
+    <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="lib/angular/angular.js"></script>
+  <!--  <script src="lib/angular/angular-route.js"></script> -->
+  <!-- <script src="js/app.js"></script> -->
+  <!-- <script src="js/services.js"></script> -->
+  <script src="js/controllers.js"></script>
+  <script src="js/directives/editableLabel.js"></script>
+  <script src="js/directives/taskInput.js"></script>
+  <script src="js/services/dateTimeService.js"></script>
+  <!-- <script src="js/filters.js"></script> -->
+  <!-- <script src="js/directives.js"></script> -->
+  
+</head>
+<body>
+<!--  
+<div ng-controller="scopeExampleController">
+
+<div ng-sparkline ng-city="San Francisco"></div>
+
+</div>
+-->
+<div>
+<Span>Test</Span>
+<Span>Test</Span>
+<Span>Test</Span>
+</div>
+
+
+
+<div class="panel-defult" ng-controller="TaskListCtrl">
+
+
+<div my-test-dir ng-model="test.pos"></div>
+
+
+
+<div class="splitter-layout" style="width: 235px; height: 436px;">
+	<div>
+	  <table class="f table-header-row" cellpadding="0" border="0" cellspacing="0">
+	    <tbody>
+	    <tr class="yO">
+	      <td>
+	        <div class="table-cell-inner table-column-header" style="text-align:left; height:45px;">
+	          <div>Name</div>
+	        </div>  
+	      </td>
+	      <td>
+	        <div class="table-cell-inner table-column-header" style="text-align:left; height:45px;">
+	          <div>Time</div>
+	        </div>
+	      </td>
+	      <td>
+          <div class="table-cell-inner table-column-header" style="text-align:left; height:45px;">
+            <div>Duration</div>
+          </div>
+        </td>
+	    </tr>
+	    </tbody>
+	  </table>
+	</div>
+
+	<div>
+	  <table class="f">
+	    <tbody>
+	    <tr ng-repeat="task in tasks" class="yO">
+	      <td class="xY">
+	        <div class="table-cell-inner" style="text-align:left;">
+	          <div>{{task.name}}</div>
+	        </div>  
+	      </td>
+	      <td class="xY">
+	        <div class="table-cell-inner" style="text-align:left;">
+	          <gc-editable ng-model="task.pos" unit=""></gc-editable>
+	        </div>
+	      </td>
+	      <td class="xY">
+	        <div class="table-cell-inner" style="text-align:left;">
+	          <gc-editable ng-model="task.duration" unit="days"></gc-editable>
+	        </div>
+	      </td>
+	    </tr>
+	    </tbody>
+	  </table>
+	</div>
+</div>
+
+
+<div class="splitter-layout-splitter splitter" style="height: 436px;"></div>
+
+<div class="splitter-layout" style="width: 1260px; height: 436px;">
+
+  <div>
+    
+    <gc-time ng-model="time"></gc-time>
+  
+  </div>
+
+	<div>
+	  <table class="f">
+	    <tbody>
+	    <tr ng-repeat="task in tasks" class="yO">
+	      <td class="xY">
+	        <div class="table-cell-inner" style="text-align:left;">
+	        
+	          <!--  Gantt task item-->          
+	          <!--   <gc-task-item ng-model="task"></gc-task-item> -->
+	          <task gc-task-model="task.pos" duration="task.duration"></task>
+	        </div>
+	      </td>
+	    </tr>
+	    </tbody>
+	  </table>
+	</div>
+</div>
+
+</div>
+
+
+
+
+  
+</body>
+</html>

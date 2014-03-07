@@ -1,0 +1,181 @@
+/* app css stylesheet */
+
+
+
+
+
+.panel-defult {
+	float: left;
+}
+
+
+
+.splitter-layout {
+	position: relative;
+	margin-top: 0px;
+	min-height: 1px;
+	float: left;
+}
+
+.splitter-layout-splitter {
+	position: relative;
+	margin-top: 0px;
+	min-height: 1px;
+	float: left;
+	width: 5px;
+	background-color: #DFE8F6;
+    border-right: 1px solid #99BCE8;
+}
+
+
+.splitter {
+    cursor: col-resize;
+}
+
+
+
+
+
+.f {
+    table-layout: fixed;
+    width: 100%;
+    border-spacing: 0px;
+    padding: 0px;
+}
+
+
+.yO {
+    background: none repeat scroll 0% 0% #FFF;
+}
+
+.xY {
+    border-bottom: 1px solid #EDEDED;
+    empty-cells: show;
+    outline: medium none;
+    overflow: hidden;
+    padding: 3px 0px 1px;
+    vertical-align: middle;
+    white-space: nowrap;
+    height: 24px;
+}
+
+
+
+.table-cell-inner {
+    padding-left: 0px;
+    padding-right: 0px;
+    cursor: default;
+    overflow: visible;
+    position: relative;
+    height: inherit;
+}
+
+
+.table-header-row {
+    border-top: 1px solid #C5C5C5;
+}
+
+
+.table-column-header {
+    background-color: #C5C5C5;
+    background-image: -moz-linear-gradient(center top , #F9F9F9, #E3E4E6);
+    border-right: 1px solid #C5C5C5;
+    color: #000000;
+    font: 11px/13px tahoma,arial,verdana,sans-serif;
+     /* height: 24px; */
+    padding: 0;
+}
+
+
+.gantt-event-wrap {
+    z-index: 10;
+    overflow: visible;
+    top: 16%;
+    height: 68%;
+    position: absolute;
+}
+
+.gantt-task-bar {
+    border: 1px solid #3172D7;
+    height: 100%;
+    border-radius: 2px;
+    background: none repeat scroll 0% 0% #E5ECF5;
+    box-shadow: 1px 1px 2px rgba(150, 150, 150, 0.5);
+}
+
+
+.gantt-move-handle {
+	float: left;
+	height: 100%;
+	overflow: hidden;
+  z-index: 999;
+  background-image: none;
+  cursor: move;
+}
+
+.gantt-resizable-handle {
+    /*position: absolute;*/
+    /*float:left; */
+    /*top: 0px;*/
+    height: 100%;
+    width: 7px;
+    overflow: hidden;
+    z-index: 999;
+    background-image: none;
+}
+
+.gantt-resizable-handle-start {
+    left: -1px;
+    cursor: w-resize;
+}
+
+.gantt-resizable-handle-end {
+    right: -1px;
+    cursor: e-resize;
+}
+
+
+
+.gc-editable-input {
+	height: inherit;
+	width: 95%;
+	padding: 0px;
+	margin-bottom: 0px;
+}
+
+
+
+
+/* */
+
+.x-panel-default {
+	border: 1px solid;
+    border-color: #99BCE8;
+    padding: 0;
+}
+
+.x-splitter-vertical {
+    background-color: #DFE8F6;
+    border-right: 1px solid #99BCE8;
+}
+
+.x-box-item {
+    position: relative !important;
+    left: 0px;
+    top: 0px;
+}
+
+.x-grid-cell-inner {
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+
+
+    overflow: visible;
+}
+
+
+.sch-event-wrap {
+    position: absolute;
+    overflow: visible;
+}
